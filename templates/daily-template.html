@@ -1,0 +1,99 @@
+<!--
+  宏观雷达 MacroRadar · 每日宏观日报 完整模板（日报专用）
+  ============================================================
+  本模板已固化日报的完整 5 区块结构，AI 生成日报时：
+  1. 复制本文件全部内容
+  2. 只替换 {占位} 内容与数据行，不得增删区块、不得改配色/结构
+  3. 删除全部注释行
+  设计系统：
+  · 背景浅灰 #f2f4f8，卡片白底圆角 12px，max-width 520px
+  · 顶部深蓝渐变 linear-gradient(135deg,#0f1e4b,#1e3a8a 55%,#1d4ed8)
+  · 语义色：鹰派/风险=红 #dc2626（浅底#fef2f2）｜中性/关注=琥珀 #b45309（浅底#fffbeb）｜鸽派/利好=绿 #047857（浅底#f0fdf4）｜信息=蓝 #1d4ed8（浅底#eff6ff）
+  · 市场涨跌：中国习惯 红涨绿跌
+  · 概率条：加息=红渐变、维持=琥珀渐变、降息=绿渐变
+-->
+
+<div style="background:#f2f4f8;padding:16px 8px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;">
+<div style="max-width:520px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(15,30,75,.08);">
+
+  <!-- ===== 区块1 头部：品牌 + 日期 + 结果标签 ===== -->
+  <div style="background:linear-gradient(135deg,#0f1e4b 0%,#1e3a8a 55%,#1d4ed8 100%);padding:18px 20px;color:#ffffff;">
+    <div style="font-size:15px;font-weight:800;letter-spacing:1px;">MACRO RADAR</div>
+    <div style="font-size:12px;opacity:.85;margin-top:3px;">{YYYY-MM-DD} 周{几} · 每日宏观日报</div>
+    <div style="margin-top:10px;">
+      <span style="display:inline-block;background:{标签底色:鹰红/中琥珀/鸽绿};color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;">{结果标签：如 今日无重磅事件 / FOMC 利率决议 / 非农数据}</span>
+    </div>
+  </div>
+
+  <div style="padding:14px 16px 4px;">
+
+    <!-- ===== 区块2 隔夜市场：美股三指数 + 美债收益率 + VIX + 美元/黄金/BTC（涨红跌绿） ===== -->
+    <div style="border-left:4px solid #047857;background:#f0fdf4;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#065f46;margin-bottom:6px;">隔夜市场</div>
+      <table style="width:100%;font-size:12.5px;color:#334155;border-collapse:collapse;">
+        <tr><td style="padding:2px 0;">标普500</td><td style="text-align:right;">{数值} <b style="color:{涨#dc2626|跌#047857};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+        <tr><td style="padding:2px 0;">纳斯达克</td><td style="text-align:right;">{数值} <b style="color:{涨|跌};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+        <tr><td style="padding:2px 0;">道琼斯</td><td style="text-align:right;">{数值} <b style="color:{涨|跌};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+        <tr><td style="padding:2px 0;">美债10年期</td><td style="text-align:right;"><b style="color:{涨|跌};">{x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{较前日 bp}</td></tr>
+        <tr><td style="padding:2px 0;">美债2年期</td><td style="text-align:right;"><b style="color:{涨|跌};">{x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{较前日 bp}</td></tr>
+        <tr><td style="padding:2px 0;">VIX 恐慌指数</td><td style="text-align:right;"><b style="color:{涨|跌};">{x.xx}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{如：风险偏好回升}</td></tr>
+        <tr><td style="padding:2px 0;">美元指数</td><td style="text-align:right;"><b style="color:{涨|跌};">{x.xx}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{周变化}</td></tr>
+        <tr><td style="padding:2px 0;">黄金</td><td style="text-align:right;">{数值} <b style="color:{涨|跌};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+        <tr><td style="padding:2px 0;">比特币</td><td style="text-align:right;">{精确数值} <b style="color:{涨|跌};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+      </table>
+    </div>
+
+    <!-- ===== 区块3 利率路径：当前利率 + 未来 2-3 次会议概率条 ===== -->
+    <div style="border-left:4px solid #b45309;background:#fffbeb;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:6px;">利率路径</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.7;margin-bottom:6px;">
+        当前利率 <b>{3.50%-3.75%}</b>（维持）· 主席 {姓名} {一句话立场}
+      </div>
+      <!-- 每次会议一组概率条：加息/维持/降息 三行 -->
+      <div style="font-size:11.5px;color:#334155;margin-bottom:2px;">{会议名，如 FOMC 9月（9/17）}</div>
+      <div style="font-size:11px;color:#64748b;margin-bottom:2px;">加息 25bp · <b style="color:#dc2626;">{55%}</b></div>
+      <div style="background:#edf0f5;height:7px;border-radius:4px;overflow:hidden;margin-bottom:3px;"><div style="width:{55}%;height:100%;background:linear-gradient(90deg,#f87171,#dc2626);"></div></div>
+      <div style="font-size:11px;color:#64748b;margin-bottom:2px;">维持不变 · <b style="color:#b45309;">{45%}</b></div>
+      <div style="background:#edf0f5;height:7px;border-radius:4px;overflow:hidden;margin-bottom:3px;"><div style="width:{45}%;height:100%;background:linear-gradient(90deg,#fbbf24,#d97706);"></div></div>
+      <div style="font-size:11px;color:#64748b;margin-bottom:2px;">降息 · <b style="color:#047857;">{0%}</b></div>
+      <div style="background:#edf0f5;height:7px;border-radius:4px;overflow:hidden;margin-bottom:8px;"><div style="width:{0}%;height:100%;background:linear-gradient(90deg,#34d399,#059669);"></div></div>
+      <!-- 第二场会议（远期参考，简版：一行文字汇总，不画概率条，避免与主会议抢视觉） -->
+      <div style="font-size:11.5px;color:#334155;margin-bottom:2px;">{会议名，如 FOMC 12月}</div>
+      <div style="font-size:11px;color:#64748b;margin-bottom:8px;">加息 <b style="color:#dc2626;">{xx%}</b> ｜ 维持 <b style="color:#b45309;">{xx%}</b> ｜ 降息 <b style="color:#047857;">{xx%}</b></div>
+      <!-- 突变标注（如与昨日/上周差异 >10pp） -->
+      <div style="font-size:11.5px;color:#dc2626;font-weight:700;">⚠️ 利率预期突变：9月加息概率较上次 -11pp</div>
+    </div>
+
+    <!-- ===== 区块4 今日焦点：有事件则解读（含投行视角），无事件则市场快评 ===== -->
+    <div style="border-left:4px solid #1d4ed8;background:#eff6ff;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#1e40af;margin-bottom:6px;">今日焦点</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.7;">
+        {有事件：实际值 vs 预期 vs 前值 + 鹰鸽判定 + 市场反应}
+        {无事件：市场快评 1-2 句——隔夜市场主线的客观概述，如"7月非农爆冷后加息预期降温，标普创新高，风险偏好回升"}
+        <br><br>
+        <b>投行视角</b>：{3 家主流投行对利率路径的看法，鹰鸽红绿标注，如 高盛：年内不变=绿 ｜ 美银：9月起加息=红 ｜ 花旗：Q4 降息=绿}
+      </div>
+    </div>
+
+    <!-- ===== 区块5 事件预告：未来 7 天 + 本月日程 ===== -->
+    <div style="border-left:4px solid #b45309;background:#fffbeb;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:6px;">事件预告（北京时间）</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.7;">
+        <b>未来 7 天</b>：<br>
+        {M/D（周几）HH:MM} {事件名} — {一句话关注点}<br>
+        {M/D（周几）HH:MM} {事件名} — {一句话关注点}<br>
+        <br>
+        <b>本月日程</b>：{M/D} {事件} · {M/D} {事件} · {M/D} {事件}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 底部：署名 ===== -->
+  <div style="padding:4px 16px 14px;color:#94a3b8;font-size:10.5px;line-height:1.6;">
+    宏观雷达 MacroRadar · 数据来源：美联储/BLS/BEA/CME FedWatch<br>
+    仅供参考，不构成投资建议
+  </div>
+
+</div>
+</div>

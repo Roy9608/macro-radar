@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观雷达 · 周报 H5 样式预览</title>
+<style>
+  :root {
+    --navy: #0f2a52;
+    --navy-2: #1e3a8a;
+    --ink: #1f2937;
+    --ink-soft: #6b7280;
+    --line: #e5e7eb;
+    --bg: #eef1f6;
+    --card: #ffffff;
+    --red: #dc2626;
+    --red-soft: #fef2f2;
+    --amber: #b45309;
+    --amber-soft: #fffbeb;
+    --green: #047857;
+    --green-soft: #ecfdf5;
+    --blue: #1d4ed8;
+    --blue-soft: #eff6ff;
+    --mono: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+    --sans: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: #dfe3ec;
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+    min-height: 100vh;
+  }
+
+  /* ===== 手机壳 ===== */
+  .phone {
+    width: 400px;
+    background: var(--bg);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15,42,82,.25);
+    border: 8px solid #1c2430;
+  }
+  .phone-bar {
+    background: #1c2430;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-bar .notch {
+    width: 90px; height: 6px; border-radius: 3px;
+    background: #3d4757;
+  }
+  .screen { padding: 0 14px 26px; }
+
+  /* ===== 头部 ===== */
+  .header {
+    background: linear-gradient(135deg, #0f2a52 0%, #1e3a8a 55%, #2563eb 100%);
+    color: #fff;
+    padding: 20px 18px 16px;
+    border-radius: 0 0 18px 18px;
+    margin: 0 -14px 14px;
+  }
+  .header .brand {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 2px; opacity: .8; font-weight: 600;
+  }
+  .header .brand .dot {
+    width: 7px; height: 7px; border-radius: 2px;
+    background: #fbbf24;
+  }
+  .header h1 { font-size: 19px; font-weight: 700; margin-top: 8px; letter-spacing: .5px; }
+  .header .range { font-size: 12px; opacity: .75; margin-top: 4px; font-family: var(--mono); }
+  .header .tags { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .header .tag {
+    font-size: 10.5px; padding: 3px 9px; border-radius: 20px;
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.2);
+  }
+  .header .tag b { font-weight: 700; }
+
+  /* ===== 核心指标 ===== */
+  .kpis {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;
+  }
+  .kpi {
+    background: var(--card); border-radius: 12px; padding: 13px 14px;
+    border: 1px solid var(--line);
+  }
+  .kpi .label { font-size: 10.5px; color: var(--ink-soft); letter-spacing: 1px; }
+  .kpi .value { font-size: 17px; font-weight: 700; margin-top: 4px; font-family: var(--mono); }
+  .kpi .sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 2px; }
+  .kpi .value.up { color: var(--red); }
+  .kpi .value.hold { color: var(--amber); }
+  .kpi .value.down { color: var(--green); }
+
+  /* ===== 概率条 ===== */
+  .prob {
+    background: var(--card); border-radius: 12px; padding: 14px; margin-bottom: 12px;
+    border: 1px solid var(--line);
+  }
+  .prob h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .prob .row { margin-bottom: 9px; }
+  .prob .row:last-child { margin-bottom: 0; }
+  .prob .row-top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11.5px; margin-bottom: 4px;
+  }
+  .prob .row-top .nm { color: var(--ink-soft); }
+  .prob .row-top .pc { font-weight: 700; font-family: var(--mono); }
+  .prob .bar { height: 7px; border-radius: 4px; background: #edf0f5; overflow: hidden; }
+  .prob .bar i { display: block; height: 100%; border-radius: 4px; }
+  .bar-hike { background: linear-gradient(90deg,#f87171,#dc2626); }
+  .bar-hold { background: linear-gradient(90deg,#fbbf24,#d97706); }
+  .bar-cut  { background: linear-gradient(90deg,#34d399,#059669); }
+  .prob .legend { font-size: 10px; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; }
+
+  /* ===== 区块 ===== */
+  .section {
+    background: var(--card); border-radius: 12px; padding: 14px 15px; margin-bottom: 12px;
+    border: 1px solid var(--line);
+  }
+  .section .head {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 12.5px; font-weight: 700; margin-bottom: 9px;
+  }
+  .section .head .bar { width: 3px; height: 13px; border-radius: 2px; }
+  .section p, .section li { font-size: 12px; line-height: 1.75; color: var(--ink-soft); }
+  .section li { margin-bottom: 6px; list-style: none; padding-left: 14px; position: relative; }
+  .section li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: #cbd5e1; }
+  .section li b { color: var(--ink); }
+  .hl-red { color: var(--red); font-weight: 700; }
+  .hl-amber { color: var(--amber); font-weight: 700; }
+  .hl-green { color: var(--green); font-weight: 700; }
+
+  /* ===== 投行观点 ===== */
+  .banks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bank {
+    border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px;
+    background: #fafbfc;
+  }
+  .bank .nm { font-size: 11px; font-weight: 700; color: var(--ink); }
+  .bank .v { font-size: 10.5px; margin-top: 3px; line-height: 1.5; }
+
+  /* ===== 日历 ===== */
+  .cal-item {
+    display: flex; gap: 10px; align-items: center; padding: 7px 0;
+    border-bottom: 1px dashed var(--line); font-size: 12px;
+  }
+  .cal-item:last-child { border-bottom: none; }
+  .cal-item .date {
+    font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--navy-2);
+    background: var(--blue-soft); border-radius: 6px; padding: 4px 8px; white-space: nowrap;
+  }
+  .cal-item .ev { color: var(--ink-soft); }
+  .cal-item .ev b { color: var(--ink); }
+
+  /* ===== 页脚 ===== */
+  .foot {
+    text-align: center; font-size: 9.5px; color: #9aa3b2;
+    padding: 8px 0 2px; letter-spacing: 1px; line-height: 1.8;
+  }
+
+  /* ===== 桌面侧注 ===== */
+  .desk-note {
+    position: fixed; right: 24px; top: 24px; max-width: 260px;
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; font-size: 12px; color: var(--ink-soft); line-height: 1.7;
+    box-shadow: 0 8px 24px rgba(15,42,82,.08);
+  }
+  .desk-note b { color: var(--navy); }
+  @media (max-width: 900px) { .desk-note { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="desk-note">
+  <b>预览说明</b><br>
+  这是「宏观雷达」周报的 <b>H5 网页样式</b>（方案 B）——手机壳模拟微信内置浏览器打开效果。<br><br>
+  实际使用时：周报推送里附一个链接，点开就是这页，可容纳图表、历史对比等更丰富的信息。内容为真实公开数据（8月3-9日当周）。
+</div>
+
+<div class="phone">
+  <div class="phone-bar"><div class="notch"></div></div>
+  <div class="screen">
+
+    <!-- 头部 -->
+    <div class="header">
+      <div class="brand"><span class="dot"></span>MACRO RADAR · 宏观雷达</div>
+      <h1>宏观周报</h1>
+      <div class="range">2026.08.03 - 2026.08.09</div>
+      <div class="tags">
+        <span class="tag">利率 <b>3.50-3.75%</b></span>
+        <span class="tag">9月加息概率 <b>68%</b></span>
+        <span class="tag">Warsh 任内首次 FOMC</span>
+      </div>
+    </div>
+
+    <!-- 核心指标 -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label">联邦基金利率</div>
+        <div class="value hold">3.50-3.75%</div>
+        <div class="sub">7月 FOMC 9:3 维持不变</div>
+      </div>
+      <div class="kpi">
+        <div class="label">核心 PCE（6月）</div>
+        <div class="value up">3.3%</div>
+        <div class="sub">同比 · 仍高于 2% 目标</div>
+      </div>
+      <div class="kpi">
+        <div class="label">9月加息概率</div>
+        <div class="value up">68%</div>
+        <div class="sub">LSEG · 上周 FOMC 后一度 72.3%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">7月 ADP</div>
+        <div class="value down">+4.4万</div>
+        <div class="sub">预期 +7.5万 · 就业走弱信号</div>
+      </div>
+    </div>
+
+    <!-- 利率路径概率 -->
+    <div class="prob">
+      <h3>利率路径 · 9月 FOMC（9/17）</h3>
+      <div class="row">
+        <div class="row-top"><span class="nm">加息 25bp</span><span class="pc hl-red">68%</span></div>
+        <div class="bar"><i class="bar-hike" style="width:68%"></i></div>
+      </div>
+      <div class="row">
+        <div class="row-top"><span class="nm">维持不变</span><span class="pc hl-amber">32%</span></div>
+        <div class="bar"><i class="bar-hold" style="width:32%"></i></div>
+      </div>
+      <div class="row">
+        <div class="row-top"><span class="nm">降息</span><span class="pc">~0%</span></div>
+        <div class="bar"><i class="bar-cut" style="width:0%"></i></div>
+      </div>
+      <div class="legend">较上周变化：加息概率由 72.3% 回落至 68%，油价下跌 + PCE 软于预期是降温主因。</div>
+    </div>
+
+    <!-- 本周回顾 -->
+    <div class="section">
+      <div class="head"><span class="bar" style="background:#f59e0b"></span>本周回顾</div>
+      <ul>
+        <li><b>7月 FOMC 9:3 维持利率</b>：克利夫兰/明尼阿波利斯/达拉斯三票要求加息，<span class="hl-red">2016 年以来最大分歧</span>；Warsh 首秀表态「就业稳定 + 通胀上行则倾向收紧」</li>
+        <li>市场剧烈反应：道指单日 <span class="hl-red">-2.19%</span>，30 年美债收益率冲上 <span class="hl-red">5.19%</span>（2007 年来新高）</li>
+        <li><b>6月核心 PCE +3.3%</b>：软于预期（+3.4%）但仍远高于目标</li>
+        <li><b>英央行 6:3 维持 3.75%</b>、<b>日央行维持 1%</b>（东京疑似干预汇市，USD/JPY 163→158）</li>
+      </ul>
+    </div>
+
+    <!-- 下周关注 -->
+    <div class="section">
+      <div class="head"><span class="bar" style="background:#2563eb"></span>下周关注</div>
+      <div class="cal-item"><span class="date">08/12 20:30</span><span class="ev"><b>CPI 通胀数据</b>（7月）· 判断加息路径的关键一役</span></div>
+      <div class="cal-item"><span class="date">08/20 02:00</span><span class="ev"><b>FOMC 会议纪要</b>（7月）· 鹰派细节信号</span></div>
+      <div class="cal-item"><span class="date">08/27-29</span><span class="ev"><b>Jackson Hole 全球央行年会</b> · Warsh 讲话</span></div>
+    </div>
+
+    <!-- 投行观点 -->
+    <div class="section">
+      <div class="head"><span class="bar" style="background:#7c3aed"></span>华尔街投行分歧</div>
+      <div class="banks">
+        <div class="bank"><div class="nm">高盛 / 巴克莱</div><div class="v hl-green">年内维持不变</div></div>
+        <div class="bank"><div class="nm">美国银行</div><div class="v hl-red">9月起连续加息</div></div>
+        <div class="bank"><div class="nm">摩根大通</div><div class="v hl-amber">12月加息一次</div></div>
+        <div class="bank"><div class="nm">花旗</div><div class="v hl-green">Q4 重启降息（三次）</div></div>
+      </div>
+    </div>
+
+    <!-- 其他央行 -->
+    <div class="section">
+      <div class="head"><span class="bar" style="background:#059669"></span>全球央行联动</div>
+      <ul>
+        <li><b>欧央行</b>：7月通胀回升至 2.9%，<span class="hl-amber">9月加息预期升温</span>，与美联储同向偏鹰</li>
+        <li><b>日央行</b>：维持 1%，首次警告潜在通胀或超 2%，<span class="hl-amber">9月加息窗口打开</span>（预期 +25bp 至 1.25%）</li>
+        <li><b>英央行</b>：6:3 维持 3.75%，鹰派分歧扩大，下次议息 9/17</li>
+      </ul>
+    </div>
+
+    <div class="foot">宏观雷达 MacroRadar · 数据截至 2026-08-07<br>内容基于公开信息，不构成投资建议</div>
+
+  </div>
+</div>
+
+</body>
+</html>

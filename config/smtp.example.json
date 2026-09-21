@@ -1,0 +1,9 @@
+{
+  "smtp_host": "smtp.qq.com",
+  "smtp_port": 465,
+  "use_ssl": true,
+  "sender": "your_email@example.com",
+  "auth_code": "your_smtp_auth_code",
+  "sender_name": "MACRO RADAR",
+  "subject_prefix": "[宏观雷达] "
+}

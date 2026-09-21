@@ -1,0 +1,103 @@
+<!--
+  宏观雷达 MacroRadar · T-1 赛前简报 专用模板（仅明天有 P0 事件时触发）
+  ============================================================
+  定位：只服务「明天那一个 P0 事件」的赛前简报。与日报分工：
+  · 日报 = 全景晨报（昨天市场 + 利率现状 + 事件预告）
+  · T-1  = 赛前简报（预期 + 三种情景 + 看点），只谈明天，不谈全局
+  因此：不要放当前利率 / FedWatch 概率条 / 投行泛泛看法（日报已有，重复）。
+  受众：关注投资与仓位调整的普通读者，对美联储研究不深。
+  写作要求：通俗大白话，把数据含义翻译成"对持仓资产意味着什么"（成长股/科技/黄金/BTC 等），给框架不给结论，不做买卖建议。
+  生成规则：
+  1. 复制本文件，只替换 {占位} 与数据行
+  2. 区块顺序固定，不得增删（其他央行区块除外：仅 FOMC 前保留）
+  3. 删除全部注释行
+  设计系统：背景 #f2f4f8 / 白底圆角 / 深蓝渐变头 / 左侧色条分区
+  语义色：鹰派/风险=红 #dc2626（浅底#fef2f2）｜中性/关注=琥珀 #b45309（浅底#fffbeb）｜鸽派/利好=绿 #047857（浅底#f0fdf4）｜信息=蓝 #1d4ed8（浅底#eff6ff）
+-->
+
+<div style="background:#f2f4f8;padding:16px 8px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;">
+<div style="max-width:520px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(15,30,75,.08);">
+
+  <!-- 头部：事件名 + 北京时间 + 预期标签 -->
+  <div style="background:linear-gradient(135deg,#0f1e4b 0%,#1e3a8a 55%,#1d4ed8 100%);padding:18px 20px;color:#ffffff;">
+    <div style="font-size:15px;font-weight:800;letter-spacing:1px;">MACRO RADAR</div>
+    <div style="font-size:12px;opacity:.85;margin-top:3px;">明日（{M/D 周几}）· T-1 赛前简报</div>
+    <div style="margin-top:10px;">
+      <span style="display:inline-block;background:{标签底色:按预期鹰/鸽/中性选红/绿/琥珀};color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;">{事件名，如 美国7月CPI · 决定9月是否加息}</span>
+    </div>
+  </div>
+
+  <div style="padding:14px 16px 4px;">
+
+    <!-- 区块1 事件档案（2x2 指标卡：数字统一 16px 加粗，白底圆角） -->
+    <div style="border-left:4px solid #1d4ed8;background:#eff6ff;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#1e40af;margin-bottom:8px;">事件档案</div>
+      <table style="width:100%;border-collapse:separate;border-spacing:6px;font-size:12px;color:#334155;">
+        <tr>
+          <td style="width:50%;background:#ffffff;border-radius:8px;padding:8px 10px;">
+            <div style="color:#64748b;font-size:10.5px;">发布时间（北京）</div>
+            <div style="font-size:16px;font-weight:700;margin-top:2px;">{M/D 周几 HH:MM}</div>
+          </td>
+          <td style="width:50%;background:#ffffff;border-radius:8px;padding:8px 10px;">
+            <div style="color:#64748b;font-size:10.5px;">市场预期</div>
+            <div style="font-size:16px;font-weight:700;margin-top:2px;">{预期值，如 同比+3.4%}</div>
+            <div style="color:#94a3b8;font-size:10px;">{预期来源，如 FactSet 综合}</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#ffffff;border-radius:8px;padding:8px 10px;">
+            <div style="color:#64748b;font-size:10.5px;">前值（{上月}）</div>
+            <div style="font-size:16px;font-weight:700;margin-top:2px;">{前值}</div>
+            <div style="color:#047857;font-size:10px;">{前值补充，如 环比-0.4%}</div>
+          </td>
+          <td style="background:#ffffff;border-radius:8px;padding:8px 10px;">
+            <div style="color:#64748b;font-size:10.5px;">{核心指标} 预期</div>
+            <div style="font-size:16px;font-weight:700;margin-top:2px;">{核心预期值，如 同比+2.5%}</div>
+            <div style="color:#94a3b8;font-size:10px;">{说明，如 剔除食品能源}</div>
+          </td>
+        </tr>
+      </table>
+      <div style="background:#dbeafe;border-radius:8px;padding:8px 10px;font-size:12px;color:#1e40af;line-height:1.6;margin-top:6px;">
+        💡 <b>为什么盯着它</b>：{大白话 1-2 句：它决定什么、当前市场怎么押注}
+      </div>
+    </div>
+
+    <!-- 区块2 三种情景：超预期/符合/低于 → 利率路径含义 + 持仓含义（T-1 灵魂） -->
+    <div style="border-left:4px solid #b45309;background:#fffbeb;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:6px;">三种情景 · 数据出来该怎么想</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.75;">
+        <b style="color:#dc2626;">📈 超预期</b>（{阈值描述}）：{利率路径含义}，<b>{对持仓的含义，如 成长股/科技/黄金/BTC 这类利率敏感资产通常承压}</b><br>
+        <b style="color:#b45309;">📊 符合预期</b>：{含义，如 维持当前路径，市场反应平淡}<br>
+        <b style="color:#047857;">📉 低于预期</b>（{阈值描述}）：{含义}，<b>{对持仓的含义，如 风险资产（股票/BTC）通常受益，黄金偏强}</b>
+      </div>
+    </div>
+
+    <!-- 区块3 关键看点：通俗化，翻译成对持仓的意义 -->
+    <div style="border-left:4px solid #047857;background:#f0fdf4;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#065f46;margin-bottom:6px;">盯住这两个信号</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.8;">
+        <b>① {信号名}——{大白话问题}</b><br>
+        <span style="color:#eab308;">⭐</span> {大白话解释：这个数字是什么、为什么重要、守住/失守意味着什么、对持仓的影响}<br><br>
+        <b>② {信号名}——{大白话问题}</b><br>
+        <span style="color:#eab308;">⭐</span> {大白话解释：常见误读/陷阱、怎么判断、对持仓的影响}
+      </div>
+    </div>
+
+    <!-- 区块4 全球央行联动：仅 FOMC 前保留，其他数据日删除本区块 -->
+    <div style="border-left:4px solid #7c3aed;background:#f5f3ff;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:#5b21b6;margin-bottom:6px;">全球央行联动</div>
+      <div style="font-size:12.5px;color:#334155;line-height:1.75;">
+        {仅当明天是 FOMC 决议时保留：欧央行/日央行/英央行近期动作一句话各自。其他事件日删除本区块}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 底部：署名 -->
+  <div style="padding:4px 16px 14px;color:#94a3b8;font-size:10.5px;line-height:1.6;">
+    宏观雷达 MacroRadar · 数据来源：{来源1}/{来源2}/{来源3}<br>
+    仅供参考，不构成投资建议
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,47 @@
+<!--
+  宏观雷达 MacroRadar · 卡片模板（日报 / T-1 提醒 / 数据快报 共用）
+  ============================================================
+  设计系统（勿改，除非维护者确认升级）：
+  · 背景浅灰 #f2f4f8，卡片白底圆角 12px
+  · 顶部深蓝渐变 head（品牌 MACRO RADAR + 事件名 + 结果标签）
+  · 分区用左侧色条（border-left:4px solid）：
+      - 红 #dc2626 / #fef2f2  鹰派 / 风险
+      - 琥珀 #b45309 / #fffbeb 中性 / 关注
+      - 绿 #047857 / #f0fdf4  鸽派 / 利好
+      - 蓝 #1d4ed8 / #eff6ff  信息 / 背景解读
+  · 市场涨跌：中国习惯 红涨绿跌（美股/美元/黄金/BTC 均适用）
+  · 整体 max-width 520px
+  使用方式：复制本文件，按注释占位 {XXX} 填内容，删除注释行即可。
+  区块顺序可增减，但【头部】【底部】必须保留。
+-->
+
+<div style="background:#f2f4f8;padding:16px 8px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;">
+<div style="max-width:520px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(15,30,75,.08);">
+
+  <!-- ===== 头部：品牌 + 日期 + 事件标签 ===== -->
+  <div style="background:linear-gradient(135deg,#0f1e4b 0%,#1e3a8a 55%,#1d4ed8 100%);padding:18px 20px;color:#ffffff;">
+    <div style="font-size:15px;font-weight:800;letter-spacing:1px;">MACRO RADAR</div>
+    <div style="font-size:12px;opacity:.85;margin-top:3px;">{YYYY-MM-DD} 周{几} · {日报|明日提醒|数据快报}</div>
+    <div style="margin-top:10px;">
+      <span style="display:inline-block;background:{标签底色};color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;">{事件名 / 今日无重磅事件}</span>
+    </div>
+  </div>
+
+  <!-- ===== 分区一：隔夜市场（涨红跌绿） ===== -->
+  <div style="padding:14px 16px 4px;">
+    <div style="border-left:4px solid {色};background:{浅底色};padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="font-size:13px;font-weight:800;color:{深色};margin-bottom:6px;">{分区标题}</div>
+      <table style="width:100%;font-size:12.5px;color:#334155;border-collapse:collapse;">
+        <tr><td style="padding:2px 0;">{名称}</td><td style="text-align:right;">{数值} <b style="color:{涨红|跌绿};">{+x.xx%}</b></td><td style="text-align:right;color:#64748b;font-size:11px;">{备注}</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== 底部：署名 ===== -->
+  <div style="padding:4px 16px 14px;color:#94a3b8;font-size:10.5px;line-height:1.6;">
+    宏观雷达 MacroRadar · 数据来源：美联储/BLS/BEA/CME FedWatch<br>
+    仅供参考，不构成投资建议
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,56 @@
+{
+  "locale": "en",
+  "timezone_label": "UTC-4 · New York",
+  "color_convention": "auto",
+  "brand": "MACRO RADAR",
+  "date": "2026-09-21",
+  "weekday": "Mon",
+  "kind": "daily",
+  "event": "No major macro events — market recap",
+  "tag_tone": "good",
+  "sections": [
+    {
+      "tone": "good",
+      "title": "Overnight markets",
+      "table": [
+        {"name": "S&P 500", "value": "7,637.76", "pct": 1.14, "note": "week -0.25%"},
+        {"name": "Nasdaq", "value": "26,418.30", "pct": 1.69, "note": "week +0.32%"},
+        {"name": "Dow Jones", "value": "51,778.04", "pct": 0.61, "note": "week -1.51%"},
+        {"name": "US 10Y yield", "value": "4.996%", "pct": null, "note": "+6.2bp"},
+        {"name": "US 2Y yield", "value": "4.748%", "pct": null, "note": "+8bp"},
+        {"name": "VIX", "value": "14.81", "pct": -4.08, "note": "risk appetite recovering"},
+        {"name": "DXY", "value": "100.19", "pct": null, "note": "week +1.1%"},
+        {"name": "Gold", "value": "4,419.80", "pct": 0.46, "note": "COMEX, week +0.7%"},
+        {"name": "Bitcoin", "value": "81,008.32", "pct": 6.03, "note": "week +4.90%"}
+      ]
+    },
+    {
+      "tone": "warn",
+      "title": "Rate path",
+      "text": "Policy rate <b>3.75%-4.00%</b> (held after the 25bp hike on 9/17) · Chair Kevin Warsh leans hawkish: inflation too high, no preset terminal rate",
+      "probabilities": [
+        {"label": "FOMC Oct (10/29) — hike 25bp", "pct": 56.5, "kind": "hike"},
+        {"label": "FOMC Oct — hold", "pct": 43.5, "kind": "hold"},
+        {"label": "FOMC Oct — cut", "pct": 0, "kind": "cut"},
+        {"label": "FOMC Dec (12/17) — hike", "pct": 80, "kind": "hike"},
+        {"label": "FOMC Dec — hold", "pct": 10.2, "kind": "hold"},
+        {"label": "FOMC Dec — cut", "pct": 0, "kind": "cut"}
+      ]
+    },
+    {
+      "tone": "info",
+      "title": "Today's focus",
+      "text": "<b>Market recap</b>: the 25bp hike on 9/17 to 3.75%-4.00% (unanimous 12:0) was fully priced (92.5% beforehand) and read as dovish — the dot plot suggests at most one more hike this year. On Friday 9/18 risk appetite recovered, led by semis / AI hardware (SOX +3.14%, Arm +8.6%); the S&P fell 0.25% on the week while the Nasdaq rose 0.32%, the 10Y approached 5% (4.996%), the dollar held above 100, and Bitcoin rebounded to $81k.<br><br><b>Sell-side views</b>: Goldman — only one hike, +25bp in total (dovish); BofA — +75bp across Sep/Oct/Dec (most hawkish); Citi — hold until mid-2027, then cut (dovish)."
+    },
+    {
+      "tone": "warn",
+      "title": "Event calendar (Beijing time)",
+      "text": "<b>Next 7 days</b>: a data vacuum week — no P0 macro events.<br><br><b>This month</b>: 9/30 (Wed) 20:30 — US PCE price index (Aug), the Fed's preferred inflation gauge and the only major release this month."
+    }
+  ],
+  "footer": [
+    "MacroRadar · Demo card: English rendering of the 2026-09-21 daily brief (same data, translated)",
+    "Colors follow the Western convention (green = up, red = down) — set \"color_convention\": \"cn\" for the East-Asian convention",
+    "For information only — not investment advice"
+  ]
+}

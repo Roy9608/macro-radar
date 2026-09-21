@@ -1,0 +1,4 @@
+nickname,status,pushplus_token,email,channels
+alice,enabled,YOUR_PUSHPLUS_TOKEN,,daily,t1,flash,weekly
+bob,enabled,,bob@example.com,daily,weekly
+carol,disabled,,,

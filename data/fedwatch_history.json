@@ -1,0 +1,708 @@
+{
+  "meta": {
+    "project": "宏观雷达 MacroRadar · FedWatch 利率概率历史",
+    "source": "CME FedWatch Tool (WebSearch 抓取)",
+    "note": "每次自动化运行后追加新的 snapshot；prob_ 均为整数百分比，三项之和应为 100（cut 含维持含义时为 0）。source_date 为数据抓取日期（北京时间）。"
+  },
+  "meetings": [
+    {
+      "id": "fomc-2026-09",
+      "name": "FOMC 利率决议 9月（含点阵图）",
+      "date_bj": "2026-09-17",
+      "snapshots": [
+        {
+          "source_date": "2026-08-10",
+          "prob_hike": 43,
+          "prob_hold": 57,
+          "prob_cut": 0,
+          "note": "7月非农爆冷（-2.3万 vs 预期+8.3万），加息概率从55%骤降至42-44%"
+        },
+        {
+          "source_date": "2026-08-11",
+          "prob_hike": 51,
+          "prob_hold": 49,
+          "prob_cut": 0,
+          "note": "霍尔木兹局势升级推升油价、哈马克放鹰（需一定次数加息），9月加息概率升至51.2%（CME FedWatch 8/11）"
+        },
+        {
+          "source_date": "2026-08-11",
+          "prob_hike": 51,
+          "prob_hold": 49,
+          "prob_cut": 0,
+          "note": "T-1 CPI 前确认（财联社转载 CME 美联储观察 8/11）：9月加息25bp概率51.2%/维持48.8%；10月累计加息65.2%（25bp 50.5%+50bp 14.7%）"
+        },
+        {
+          "source_date": "2026-08-12",
+          "prob_hike": 48,
+          "prob_hold": 52,
+          "prob_cut": 0,
+          "note": "7月CPI公布前市场观望（财联社/每经 8/12）：9月加息25bp概率48.0%/维持52.0%，加息概率较前日回落3.2pp"
+        },
+        {
+          "source_date": "2026-08-12",
+          "prob_hike": 45,
+          "prob_hold": 55,
+          "prob_cut": 0,
+          "note": "7月CPI符合预期(同比3.4%/核心2.5%)，交易员略降9月加息押注至45%（公布前47%/盘中48%），较基线48%回落3pp，未超10pp突变阈值（财联社/东方财富 8/12 20:35）"
+        },
+        {
+          "source_date": "2026-08-13",
+          "prob_hike": 40,
+          "prob_hold": 60,
+          "prob_cut": 0,
+          "note": "CPI后首个完整交易日确认（CME FedWatch 8/13）：9月维持59.9%/加息25bp40.1%，较基线45%回落4.9pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-14",
+          "prob_hike": 35,
+          "prob_hold": 65,
+          "prob_cut": 0,
+          "note": "7月PPI持平(0.0% vs预期0.2%)、同比4.7%低于预期，加息押注进一步降温；9月维持65.2%/加息34.8%（中国基金报/CME FedWatch 8/14），较基线(8/13: hike40/hold60)差5.2pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-17",
+          "prob_hike": 29,
+          "prob_hold": 71,
+          "prob_cut": 0,
+          "note": "零售销售-0.6%与消费者信心走弱，9月维持概率升至71.4%（智通 8/14周五收盘），四舍五入后较基线(8/14: hold65) +6.4pp，未超10pp突变阈值；加息28.6%"
+        },
+        {
+          "source_date": "2026-08-18",
+          "prob_hike": 35,
+          "prob_hold": 65,
+          "prob_cut": 0,
+          "note": "零售销售-0.6%创14个月最大降幅、就业近停滞，9月维持概率升至65%（财联社 8/18 06:02 CME FedWatch），加息35%；较基线(8/17: hike29/hold71) +6pp/-6pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-19",
+          "prob_hike": 32,
+          "prob_hold": 68,
+          "prob_cut": 0,
+          "note": "零售/消费者信心走弱延续，9月维持概率升至约68%（cryptobriefing/CME FedWatch 8/19），加息约32%；较基线(8/18: hike35/hold65) -3pp/+3pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-20",
+          "prob_hike": 33,
+          "prob_hold": 67,
+          "prob_cut": 0,
+          "note": "财联社 8/20 06:20 CME FedWatch：9月维持67.3%/加息25bp32.7%；较基线(8/19: hold68) -0.7pp，未超10pp突变阈值"
+        },
+        {
+          "prob_hike": 36,
+          "prob_hold": 64,
+          "prob_cut": 0,
+          "note": "中国基金报 8/21 CME FedWatch：9月维持63.8%/加息25bp36.2%；较基线(8/20: hold67/hike33) -3.2pp/+3.2pp，未超10pp突变阈值",
+          "source_date": "2026-08-21"
+        },
+        {
+          "prob_hike": 36,
+          "prob_hold": 64,
+          "prob_cut": 0,
+          "note": "周报快照(CME FedWatch 8/21收盘)：9月维持63.8%/加息25bp36.2%；周度对比基线(8/14收盘 hold71/hike29) +7pp/-7pp，未超10pp突变阈值。周内轨迹：8/17加息概率一度降至29%（零售销售-0.6%），FOMC纪要(8/19)与穆萨勒姆讲话(8/21)推动回升至36.2%",
+          "source_date": "2026-08-22"
+        },
+        {
+          "prob_hike": 40,
+          "prob_hold": 60,
+          "prob_cut": 0,
+          "note": "每经/CME FedWatch 8/22 05:50：9月维持59.9%/加息25bp40.1%；较基线(8/22周报快照 hike36/hold64)+4pp，未超10pp突变阈值",
+          "source_date": "2026-08-24"
+        },
+        {
+          "prob_hike": 41,
+          "prob_hold": 59,
+          "prob_cut": 0,
+          "note": "中国基金报/每经 8/25 06:05 CME FedWatch：9月维持58.6%/加息25bp41.4%；较基线(8/24: hike40/hold60) +1.4pp/-1.4pp，未超10pp突变阈值",
+          "source_date": "2026-08-25"
+        },
+        {
+          "prob_hike": 40,
+          "prob_hold": 60,
+          "prob_cut": 0,
+          "note": "每经AI 8/26 CME FedWatch：9月维持60.4%/加息25bp39.6%；较基线(8/25: hike41/hold59) -1pp/+1pp，未超10pp突变阈值",
+          "source_date": "2026-08-26"
+        },
+        {
+          "prob_hike": 42,
+          "prob_hold": 58,
+          "prob_cut": 0,
+          "note": "PCE公布后即时(整体PCE同比3.7%略超预期3.6%/环比+0.2%由-0.1%转正、核心3.3%符合)：财联社利率期货显示9月加息概率约42%(公布前约36%)、维持约58%；较基线(8/26每经AI快照 hike40/hold60)+2pp/-2pp，未超10pp突变阈值",
+          "source_date": "2026-08-26"
+        },
+        {
+          "prob_hike": 42,
+          "prob_hold": 58,
+          "prob_cut": 0,
+          "note": "Jackson Hole 前市场按兵不动定价未变（沃什 8/28 演讲前），9月加息概率42%与PCE后(8/26)持平；较基线(8/26 PCE后快照 hike42/hold58)差 0pp，未超10pp突变阈值",
+          "source_date": "2026-08-27"
+        },
+        {
+          "source_date": "2026-08-28",
+          "prob_hike": 36,
+          "prob_hold": 64,
+          "prob_cut": 0,
+          "note": "财联社/新浪 8/28 CME FedWatch：9月维持63.5%/加息25bp36.5%；较基线(8/27: hike42/hold58)-5.5pp/+5.5pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-29",
+          "prob_hike": 56,
+          "prob_hold": 44,
+          "prob_cut": 0,
+          "note": "★利率突变：Jackson Hole 沃什首秀偏鹰（抗通胀未结束、金融环境非限制性），9月加息概率由35.4%飙升至55.7%（Reuters/CME FedWatch 8/28收盘），较基线(8/28晨 hike36/hold64)+19.7pp，超10pp突变阈值，触发利率突变提醒"
+        },
+        {
+          "source_date": "2026-08-31",
+          "prob_hike": 56,
+          "prob_hold": 44,
+          "prob_cut": 0,
+          "note": "周末无新交易，9月加息概率维持56%与8/29杰克逊霍尔后快照持平；较基线(8/29: hike56/hold44)差0pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-01",
+          "prob_hike": 60,
+          "prob_hold": 40,
+          "prob_cut": 0,
+          "note": "美股8/31收盘后CME FedWatch：9月加息25bp概率约59.9%-60%（新浪/MarketWatch/东方财富），较基线(8/31: hike56/hold44)+4pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-02",
+          "prob_hike": 67,
+          "prob_hold": 33,
+          "prob_cut": 0,
+          "note": "金十/CME FedWatch 9/2 06:05：9月维持33.1%/累计加息25bp 66.9%；较基线(9/1: hike60/hold40)+6.9pp，未超10pp突变阈值。驱动：美伊冲突推油价+5.74%至90.68、巴尔放鹰"
+        },
+        {
+          "source_date": "2026-09-03",
+          "prob_hike": 62,
+          "prob_hold": 38,
+          "prob_cut": 0,
+          "note": "CME FedWatch 9/3 06: 9月加息62.3%/维持37.7%；较基线(9/2:67/33) -4.7pp，未超10pp"
+        },
+        {
+          "source_date": "2026-09-03",
+          "prob_hike": 62,
+          "prob_hold": 38,
+          "prob_cut": 0,
+          "note": "T-1 非农(9/4)前 FedWatch 确认（CME 9/3 07:16，每经/东方财富）：9月加息62.3%/维持37.7%；与基线(9/3晨快照 hike62/hold38)差0.3pp，未超10pp突变阈值，无利率突变提醒"
+        },
+        {
+          "source_date": "2026-09-04",
+          "prob_hike": 48,
+          "prob_hold": 52,
+          "prob_cut": 0,
+          "note": "★利率突变：理事沃勒9/3转鸽（若通胀降温倾向维持），CME FedWatch 9月加息降至48.4%（FX168）/约50%（财联社），较基线(9/3: hike62/hold38) -13.9pp，超10pp突变阈值，触发利率突变提醒"
+        },
+        {
+          "source_date": "2026-09-04",
+          "prob_hike": 58,
+          "prob_hold": 42,
+          "prob_cut": 0,
+          "note": "非农后即时(CME FedWatch 9/4 ~20:45 财联社/格隆汇)：8月非农+16.2万远超预期5.5万，9月累计加息25bp概率升至58%/维持降至42%；较基线(9/4沃勒转鸽快照 hike48/hold52)+10pp，逼近但未超10pp突变阈值，不触发利率突变提醒"
+        },
+        {
+          "source_date": "2026-09-05",
+          "prob_hike": 59,
+          "prob_hold": 41,
+          "prob_cut": 0,
+          "note": "周五收盘口径(格隆汇/新浪 9/5 CME FedWatch)：9月维持41.4%/加息25bp 58.6%；较基线(9/4非农后快照 hike58/hold42)+0.6pp/-0.6pp，未超10pp突变阈值。周内轨迹：沃勒9/3转鸽一度压至~48-50%，非农9/4爆表(+16.2万vs预期5.5万)后回升至58.6%"
+        },
+        {
+          "source_date": "2026-09-07",
+          "prob_hike": 58,
+          "prob_hold": 42,
+          "prob_cut": 0,
+          "note": "CME FedWatch 9/7（新浪7x24 9/7）：9月维持41.7%/加息25bp58.3%；较基线(9/5: hike59/hold41) -0.7pp，未超10pp突变阈值"
+        },
+        {
+          "prob_hike": 60,
+          "prob_hold": 40,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/8 06: 9月维持39.6%/加息25bp60.4%；劳工节9/7休市，最新定价仍为9/4非农后；较基线(9/7:58/42)+2pp，未超10pp突变阈值",
+          "source_date": "2026-09-08"
+        },
+        {
+          "prob_hike": 59,
+          "prob_hold": 41,
+          "prob_cut": 0,
+          "note": "每经/CME FedWatch 9/9 06:19：9月维持40.6%/加息25bp59.4%；较基线(9/8:60/40)-0.6pp，未超10pp突变阈值",
+          "source_date": "2026-09-09"
+        },
+        {
+          "source_date": "2026-09-10",
+          "prob_hike": 60,
+          "prob_hold": 40,
+          "prob_cut": 0,
+          "note": "财联社9/10 CME FedWatch：9月维持39.8%/加息25bp60.2%；较基线(9/9:59/41)+1.2pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-10",
+          "prob_hike": 60,
+          "prob_hold": 40,
+          "prob_cut": 0,
+          "note": "T-1 CPI(9/11)前 FedWatch 确认（中国基金报/每经/东方财富 9/10 07:10）：9月加息25bp概率60.2%/维持39.8%；与基线(9/10快照 hike60/hold40)差0.2pp，未超10pp突变阈值，无利率突变提醒"
+        },
+        {
+          "source_date": "2026-09-11",
+          "prob_hike": 71,
+          "prob_hold": 29,
+          "prob_cut": 0,
+          "note": "★利率突变：财联社/CME FedWatch 9/11 显示9月加息25bp概率71.3%/维持28.7%，较基线(9/10: hike60/hold40)+11.1pp，超10pp突变阈值；CPI前市场激进抬升加息押注"
+        },
+        {
+          "source_date": "2026-09-11",
+          "prob_hike": 90,
+          "prob_hold": 10,
+          "prob_cut": 0,
+          "note": "★利率突变：财联社/CME FedWatch 9/11 盘前CPI后显示9月加息25bp概率约90%（公布前约70-71%），较基线(9/11 pre-CPI快照 hike71/hold29)+19pp，超10pp突变阈值；8月核心CPI环比0.3%超预期0.2%为关键驱动"
+        },
+        {
+          "source_date": "2026-09-12",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "周五收盘口径(财联社/CME FedWatch 9/11收盘)：9月加息25bp概率约86.3%/维持13.7%（CPI公布后盘中一度91.6%）；较基线(9/11 CPI后快照 hike90/hold10)-3.7pp，未超10pp突变阈值。周内轨迹：9/5收盘58.6%→9/10 60.2%→9/11 CPI前71.3%→CPI后峰值91.6%→收盘86.3%，周度净上行+27.7pp（CPI前后两度触发利率突变提醒）"
+        },
+        {
+          "source_date": "2026-09-14",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/14 06:13：9月维持13.8%/累计加息25bp86.2%；较基线(9/12快照 hike86/hold14)+0.2pp，未超10pp突变阈值。周末多家投行转鹰（高盛/野村），加息几乎定价"
+        },
+        {
+          "source_date": "2026-09-15",
+          "prob_hike": 92,
+          "prob_hold": 8,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/15：9月维持7.6%/累计加息25bp92.4%；较基线(9/14快照 hike86/hold14)+6pp，未超10pp突变阈值。FOMC 9/16-17决议在即，加息几乎完全定价"
+        },
+        {
+          "prob_hike": 92,
+          "prob_hold": 8,
+          "prob_cut": 0,
+          "note": "FOMC 9/16-17 决议前夜，加息25bp概率维持92.4%（市场完全定价），与9/15快照持平；较基线(9/15:92/8)差0pp，未超10pp突变阈值",
+          "source_date": "2026-09-16"
+        },
+        {
+          "prob_hike": 92,
+          "prob_hold": 8,
+          "prob_cut": 0,
+          "note": "T-1 FOMC(9/17)前夜确认（路透/CME FedWatch 9/16）：9月加息25bp约92%（与基线9/16快照 hike92/hold8 持平），差0pp，未超10pp突变阈值，无利率突变提醒",
+          "source_date": "2026-09-16"
+        },
+        {
+          "source_date": "2026-09-17",
+          "prob_hike": 100,
+          "prob_hold": 0,
+          "prob_cut": 0,
+          "note": "9/17 02:00 BJ FOMC已决议加息25bp至3.75%-4.00%，12:0全票；9月前FedWatch已定价92.5%，决议符合预期，非预期突变"
+        }
+      ]
+    },
+    {
+      "id": "fomc-2026-10",
+      "name": "FOMC 利率决议 10月",
+      "date_bj": "2026-10-29",
+      "snapshots": [
+        {
+          "source_date": "2026-08-11",
+          "prob_hike": 65,
+          "prob_hold": 35,
+          "prob_cut": 0,
+          "note": "加息25bp概率50.5% + 加息50bp概率14.7%，合并为加息口径65.2%（CME FedWatch 8/11）"
+        },
+        {
+          "source_date": "2026-08-12",
+          "prob_hike": 61,
+          "prob_hold": 39,
+          "prob_cut": 0,
+          "note": "累计加息61.2%（25bp 49.0%+50bp 12.2%）/维持38.7%（财联社 8/12），加息概率较前日回落约4pp"
+        },
+        {
+          "source_date": "2026-08-13",
+          "prob_hike": 55,
+          "prob_hold": 45,
+          "prob_cut": 0,
+          "note": "CPI后确认（CME FedWatch 8/13）：累计加息54.7%（25bp 44.9%+50bp 9.8%）/维持45.3%，较基线61%回落约6pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-14",
+          "prob_hike": 50,
+          "prob_hold": 50,
+          "prob_cut": 0,
+          "note": "10月累计维持50.1%/加息49.9%（25bp 41.8%+50bp 8.1%）（中国基金报/CME FedWatch 8/14），较基线(8/13: hike55/hold45)差5.1pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-17",
+          "prob_hike": 50,
+          "prob_hold": 50,
+          "prob_cut": 0,
+          "note": "10月累计维持50.1%/加息49.9%（25bp 41.8%+50bp 8.1%）（财联社 8/14-era 最新明确读数），四舍五入后较基线(8/14: hike50/hold50)持平，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-18",
+          "prob_hike": 49,
+          "prob_hold": 51,
+          "prob_cut": 0,
+          "note": "10月累计维持51.4%/加息25bp41.3%+50bp7.4%≈49%（财联社 8/18 06:02），较基线(8/17: hike50/hold50)约持平（-1pp/+1pp），未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-19",
+          "prob_hike": 50,
+          "prob_hold": 50,
+          "prob_cut": 0,
+          "note": "10月累计维持50.1%/加息25bp41.8%+50bp8.1%≈50%（财联社-era CME FedWatch 8/19确认），较基线(8/18: hike49/hold51) +1pp/-1pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-20",
+          "prob_hike": 42,
+          "prob_hold": 58,
+          "prob_cut": 0,
+          "note": "财联社 8/20：10月维持58.3%/累计加息41.6%(25bp37.3+50bp4.3)；较基线(8/19: hold50) +8.3pp，未超10pp突变阈值"
+        },
+        {
+          "prob_hike": 48,
+          "prob_hold": 52,
+          "prob_cut": 0,
+          "note": "中国基金报 8/21：10月维持51.8%/累计加息48.2%(25bp41.4+50bp6.8)；较基线(8/20: hold58/hike42) -6.2pp/+6.2pp，未超10pp突变阈值",
+          "source_date": "2026-08-21"
+        },
+        {
+          "prob_hike": 48,
+          "prob_hold": 52,
+          "prob_cut": 0,
+          "note": "周报快照(CME FedWatch 8/21收盘)：10月维持51.8%/累计加息48.2%(25bp41.4+50bp6.8)；周度对比基线(8/14收盘 hold50/hike50) -2pp/+2pp，未超10pp突变阈值",
+          "source_date": "2026-08-22"
+        },
+        {
+          "prob_hike": 55,
+          "prob_hold": 45,
+          "prob_cut": 0,
+          "note": "每经/CME FedWatch 8/22：10月维持45.3%/累计加息54.7%(25bp44.9+50bp9.8)；较基线(8/22周报 hike48/hold52)+7pp，未超10pp突变阈值",
+          "source_date": "2026-08-24"
+        },
+        {
+          "prob_hike": 57,
+          "prob_hold": 43,
+          "prob_cut": 0,
+          "note": "中国基金报/每经 8/25：10月维持43.0%/累计加息25bp46.0%+50bp11.0%≈57%；较基线(8/24: hike55/hold45) +2pp/-2pp，未超10pp突变阈值",
+          "source_date": "2026-08-25"
+        },
+        {
+          "prob_hike": 54,
+          "prob_hold": 46,
+          "prob_cut": 0,
+          "note": "每经AI 8/26 CME FedWatch：10月维持45.7%/加息25bp44.7%+50bp9.7%≈54.4%；较基线(8/25: hike57/hold43) -3pp/+3pp，未超10pp突变阈值",
+          "source_date": "2026-08-26"
+        },
+        {
+          "prob_hike": 54,
+          "prob_hold": 46,
+          "prob_cut": 0,
+          "note": "Jackson Hole 前10月累计加息54%/维持46%与8/26持平；较基线(8/26快照 hike54/hold46)差 0pp，未超10pp突变阈值",
+          "source_date": "2026-08-27"
+        },
+        {
+          "source_date": "2026-08-28",
+          "prob_hike": 53,
+          "prob_hold": 47,
+          "prob_cut": 0,
+          "note": "财联社/新浪 8/28 CME FedWatch：10月维持47.3%/累计加息25bp43.4%+50bp9.3%≈52.7%；较基线(8/27: hike54/hold46)-1.3pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-08-29",
+          "prob_hike": 53,
+          "prob_hold": 47,
+          "prob_cut": 0,
+          "note": "沃什讲话后10月单次会议精确概率未披露（当日无新快照），沿用8/28晨讲话前数据：累计加息52.7%；讲话后市场定价年内至少加息一次概率超90%（第一财经/腾讯新闻 8/29）"
+        },
+        {
+          "source_date": "2026-08-31",
+          "prob_hike": 53,
+          "prob_hold": 47,
+          "prob_cut": 0,
+          "note": "周末无新交易，10月累计加息53%维持；与8/29快照持平，差0pp"
+        },
+        {
+          "source_date": "2026-09-01",
+          "prob_hike": 53,
+          "prob_hold": 47,
+          "prob_cut": 0,
+          "note": "沿用8/31基线（9/1未检索到10月单次会议新概率；9月加息概率上行通常带动10月累计上行但无明确读数，暂沿用53/47）"
+        },
+        {
+          "source_date": "2026-09-02",
+          "prob_hike": 78,
+          "prob_hold": 22,
+          "prob_cut": 0,
+          "note": "★利率突变(含基线修正)：金十/CME FedWatch 9/2 06:05 10月维持22.5%/累计加息25bp56.0%+50bp21.5%=77.5%；较基线(9/1: hike53/hold47)+24.5pp超10pp阈值。口径说明：8/29-9/1快照沿用8/28旧值52.7%，实际重定价发生于杰克逊霍尔后，8/31收盘读数已达74.6%(25bp57.2+50bp17.4)，故单日真实变动仅约+2.9pp"
+        },
+        {
+          "source_date": "2026-09-03",
+          "prob_hike": 73,
+          "prob_hold": 27,
+          "prob_cut": 0,
+          "note": "CME FedWatch 9/3 06: 10月累计加息72.7%/维持27.2%；较基线(9/2:78/22) -5.3pp，未超10pp"
+        },
+        {
+          "source_date": "2026-09-04",
+          "prob_hike": 73,
+          "prob_hold": 27,
+          "prob_cut": 0,
+          "note": "CME FedWatch 9/4（每日经济新闻 9/3）：10月加息25bp55.5%+50bp17.2%≈72.7%/维持27.3%；沃勒转鸽后10月累计基本持平（基线9/3:73/27），差0pp未超阈值"
+        },
+        {
+          "source_date": "2026-09-07",
+          "prob_hike": 70,
+          "prob_hold": 30,
+          "prob_cut": 0,
+          "note": "CME FedWatch 9/7：10月维持30.1%/累计加息25bp53.7%+50bp16.1%≈69.8%；较基线(9/4: hike73/hold27) -3.2pp，未超10pp突变阈值"
+        },
+        {
+          "prob_hike": 71,
+          "prob_hold": 29,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/8: 10月维持29.1%/累计加息25bp54.9%+50bp16.1%≈71%；较基线(9/7:70/30)+1pp，未超10pp突变阈值",
+          "source_date": "2026-09-08"
+        },
+        {
+          "prob_hike": 70,
+          "prob_hold": 30,
+          "prob_cut": 0,
+          "note": "每经/CME FedWatch 9/9：10月维持29.8%/累计加息25bp54.4%+50bp15.8%≈70.2%；较基线(9/8:71/29)-0.8pp，未超10pp突变阈值",
+          "source_date": "2026-09-09"
+        },
+        {
+          "source_date": "2026-09-10",
+          "prob_hike": 72,
+          "prob_hold": 28,
+          "prob_cut": 0,
+          "note": "财联社9/10:10月累计加息25bp54.3%+50bp17.3%=71.6%/维持28.3%；较基线(9/9:70/30)+1.6pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-11",
+          "prob_hike": 82,
+          "prob_hold": 18,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/11：10月维持17.6%/累计加息25bp54.8%+50bp27.6%≈82.4%；较基线(9/10: hike72/hold28)+10.4pp，超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-11",
+          "prob_hike": 88,
+          "prob_hold": 12,
+          "prob_cut": 0,
+          "note": "CPI后市场完全定价年底前加息两次，10月累计加息概率进一步抬升，较基线(9/11 pre-CPI快照 hike82/hold18)+6pp，未超10pp突变阈值；来源：财联社9/11「年底前加息两次」定性表述推导"
+        },
+        {
+          "source_date": "2026-09-14",
+          "prob_hike": 93,
+          "prob_hold": 7,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/14：10月维持6.9%/累计加息25bp50.1%+50bp42.9%≈93%；较基线(9/12快照 hike88/hold12)+5pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-15",
+          "prob_hike": 96,
+          "prob_hold": 4,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/15：10月维持4%/累计加息25bp52%+50bp44%≈96%；较基线(9/14快照 hike93/hold7)+3pp，未超10pp突变阈值"
+        },
+        {
+          "prob_hike": 96,
+          "prob_hold": 4,
+          "prob_cut": 0,
+          "note": "财联社/CME FedWatch 9/16：10月维持4%/累计加息约96%；较基线(9/15:96/4)差0pp，未超10pp突变阈值",
+          "source_date": "2026-09-16"
+        },
+        {
+          "source_date": "2026-09-17",
+          "prob_hike": 49.8,
+          "prob_hold": 50.2,
+          "prob_cut": 0,
+          "note": "9月落地后CME FedWatch(财联社9/17)：10月维持50.2%/加息25bp49.8%；较9/16快照(96/4)大幅回落系口径滚动(9月已加息，单次会议'连续加息'概率)，非预期突变"
+        },
+        {
+          "source_date": "2026-09-18",
+          "prob_hike": 50.9,
+          "prob_hold": 49.1,
+          "prob_cut": 0,
+          "note": "FOMC 9/17加息落地后首个交易日收盘定价（金投网FedWatch 9/17 22:10）：10月维持49.1%/加息25bp50.9%；较基线(9/17快照 hike49.8/hold50.2)+1.1pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-19",
+          "prob_hike": 55.4,
+          "prob_hold": 44.6,
+          "prob_cut": 0,
+          "note": "周报快照（中国基金报/每经/财联社 9/18 06:12 CME FedWatch）：10月维持44.6%/加息25bp55.4%；较基线(9/18快照 hike50.9/hold49.1)+4.5pp，未超10pp突变阈值。周六无新交易，取9/18最新读数。FOMC后交易员定价未来12个月或再加息三次"
+        },
+        {
+          "source_date": "2026-09-21",
+          "prob_hike": 56.5,
+          "prob_hold": 43.5,
+          "prob_cut": 0,
+          "note": "格隆汇/CME FedWatch 9/21：10月维持43.5%/加息25bp56.5%；较基线(9/19快照 55.4/44.6)+1.1pp，未超10pp突变阈值"
+        }
+      ]
+    },
+    {
+      "id": "fomc-2026-11",
+      "name": "FOMC 利率决议 11月",
+      "date_bj": "2026-11-05",
+      "snapshots": []
+    },
+    {
+      "id": "fomc-2026-12",
+      "name": "FOMC 利率决议 12月（含点阵图）",
+      "date_bj": "2026-12-17",
+      "snapshots": [
+        {
+          "prob_hike": 67,
+          "prob_hold": 33,
+          "prob_cut": 0,
+          "note": "首次建档：兴业期货 8/21 引 CME FedWatch，12月累计加息概率67.2%（周环比-1.5pp）；市场对年内至少加息一次定价维持高位",
+          "source_date": "2026-08-22"
+        },
+        {
+          "prob_hike": 67,
+          "prob_hold": 33,
+          "prob_cut": 0,
+          "note": "沿用8/22周报快照（周末无新交易数据）；12月累计加息67%维持高位，市场对年内至少加息一次定价未松动",
+          "source_date": "2026-08-24"
+        },
+        {
+          "source_date": "2026-08-29",
+          "prob_hike": 90,
+          "prob_hold": 10,
+          "prob_cut": 0,
+          "note": "★利率突变：沃什Jackson Hole讲话后，12月会议及之前累计加息概率超90%（CME FedWatch，第一财经/腾讯新闻 8/28-29），较基线(8/24: hike67/hold33)+23pp，超10pp突变阈值，触发利率突变提醒（累计口径：年内至少加息一次）"
+        },
+        {
+          "source_date": "2026-08-31",
+          "prob_hike": 90,
+          "prob_hold": 10,
+          "prob_cut": 0,
+          "note": "周末无新交易，12月累计加息90%维持；与8/29快照持平，差0pp"
+        },
+        {
+          "source_date": "2026-09-01",
+          "prob_hike": 90,
+          "prob_hold": 10,
+          "prob_cut": 0,
+          "note": "沿用8/31基线（年内累计加息至少一次概率90%，沃什讲话后维持，9/1无新读数）"
+        },
+        {
+          "source_date": "2026-09-02",
+          "prob_hike": 89,
+          "prob_hold": 11,
+          "prob_cut": 0,
+          "note": "汇通/CME FedWatch 9/1 06:04：12月维持10.8%/至少加息25bp 89.2%；较基线(9/1: hike90/hold10)-1pp，未超10pp阈值。9/2 06:05 金十读数未披露12月，沿用最近可得读数"
+        },
+        {
+          "source_date": "2026-09-03",
+          "prob_hike": 89,
+          "prob_hold": 11,
+          "prob_cut": 0,
+          "note": "12月沿用9/2基线89/11"
+        },
+        {
+          "source_date": "2026-09-04",
+          "prob_hike": 89,
+          "prob_hold": 11,
+          "prob_cut": 0,
+          "note": "沿用基线89/11（沃勒转鸽后无12月单次会议新读数；年内累计加息至少一次概率维持高位）"
+        },
+        {
+          "source_date": "2026-09-05",
+          "prob_hike": 88,
+          "prob_hold": 12,
+          "prob_cut": 0,
+          "note": "非农后确认(腾讯新闻 9/4)：年底前累计加息概率由83%升至87.7%；较基线(9/4: hike89/hold11)-1.3pp，未超10pp突变阈值（累计口径：年内至少加息一次）"
+        },
+        {
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "新浪/CME FedWatch 9/5 累计口径: 12月升至3.75-4.00%或更高概率86.1%（年内至少加息一次）；较基线(9/5:88/12)-2pp，未超10pp突变阈值",
+          "source_date": "2026-09-08"
+        },
+        {
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/8基线（9/9无新12月单次会议读数）；年内累计加息至少一次86%维持",
+          "source_date": "2026-09-09"
+        },
+        {
+          "source_date": "2026-09-10",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "无9/10新读数，沿用9/9基线86/14（累计口径：年内至少加息一次）"
+        },
+        {
+          "source_date": "2026-09-11",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/10基线（9/11未检索到12月单次会议新读数）；年内累计加息至少一次86%维持"
+        },
+        {
+          "source_date": "2026-09-12",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/11基线（9/12未检索到12月单次会议新读数）；市场完全定价年底前加息两次，年内累计加息至少一次86%维持"
+        },
+        {
+          "source_date": "2026-09-14",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/12基线（9/14未检索到12月单次会议新读数）；9月/10月进一步鹰派重定价下，年内累计加息至少一次86%维持"
+        },
+        {
+          "source_date": "2026-09-15",
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/14基线（9/15未检索到12月单次会议新读数）；年内累计加息至少一次86%维持"
+        },
+        {
+          "prob_hike": 86,
+          "prob_hold": 14,
+          "prob_cut": 0,
+          "note": "沿用9/15基线（9/16未检索到12月单次会议新读数）；年内累计加息至少一次86%维持",
+          "source_date": "2026-09-16"
+        },
+        {
+          "source_date": "2026-09-17",
+          "prob_hike": 88.7,
+          "prob_hold": 11.3,
+          "prob_cut": 0,
+          "note": "9月落地后CME FedWatch(财联社9/17)：12月累计加息≥25bp 88.7%(25bp50.1%+50bp38.6%)/维持11.3%；较9/16快照(86/14)+2.7pp，未超阈值"
+        },
+        {
+          "source_date": "2026-09-18",
+          "prob_hike": 89.2,
+          "prob_hold": 10.8,
+          "prob_cut": 0,
+          "note": "FedWatch（sinopac 12/10会议表）12月累计加息≥25bp 89.2%(25bp38.9%+50bp40.3%+50bp+以上10.0%)/维持10.8%；较基线(9/17快照 hike88.7/hold11.3)+0.5pp，未超10pp突变阈值"
+        },
+        {
+          "source_date": "2026-09-19",
+          "prob_hike": 87.5,
+          "prob_hold": 12.6,
+          "prob_cut": 0,
+          "note": "周报快照（中国基金报/每经 9/18 06:12 CME FedWatch）：12月维持12.6%/累计加息25bp47.7%+50bp39.8%=87.5%；较基线(9/18快照 hike89.2/hold10.8)-1.7pp，未超10pp突变阈值。周六无新交易，取9/18最新读数。口径：年内再加息至少一次（12月及之前）"
+        },
+        {
+          "source_date": "2026-09-21",
+          "prob_hike": 79.9,
+          "prob_hold": 10.2,
+          "prob_cut": 0,
+          "note": "格隆汇/CME FedWatch 9/21：12月维持10.2%/累计加息≥25bp 79.9%(25bp46.6%+50bp33.3%)；较基线(9/19快照 87.5/12.6)-7.6pp，未超10pp突变阈值"
+        }
+      ]
+    }
+  ]
+}
