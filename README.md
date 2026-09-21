@@ -1,5 +1,7 @@
 # macro-radar
 
+English | [简体中文](README.zh-CN.md)
+
 **An AI-agent-driven macro event sentinel with deterministic delivery.**
 Tracks Fed events (FOMC / CPI / NFP / PCE) and pushes card-style briefs to subscribers —
 email first, WeChat (PushPlus) optional in China.

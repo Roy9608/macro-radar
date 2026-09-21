@@ -1,5 +1,7 @@
 # macro-radar
 
+简体中文 | [English](README.md)
+
 **AI 研究员 + 确定性分发：一个真实在跑的美联储宏观事件哨兵。**
 跟踪 FOMC / CPI / NFP / PCE，把研究结论渲染成卡片推送给订阅者——邮件为主，
 中国境内可选微信（PushPlus）。
