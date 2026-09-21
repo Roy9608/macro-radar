@@ -1,0 +1,11 @@
+# 本地凭据与私人名单 —— 绝不入库
+config/smtp.json
+config/alerts.json
+data/subscribers.csv
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 生成产物（demo/output 是刻意入库的示例，故不忽略）
+reports/*.html
