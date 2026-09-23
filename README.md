@@ -1,6 +1,6 @@
 # macro-radar
 
-English | [简体中文](README.zh-CN.md)
+**English** · [中文](README.zh-CN.md)
 
 **An AI-agent-driven macro event sentinel with deterministic delivery.**
 Tracks Fed events (FOMC / CPI / NFP / PCE) and pushes card-style briefs to subscribers —
@@ -11,6 +11,10 @@ email first, WeChat (PushPlus) optional in China.
 
 ## Why this repo is worth a look
 
+**The conclusion first: research may be fuzzy, delivery must be exact.** Everything here
+follows from that one sentence — including the rule that *silence is a valid state*
+(no event tomorrow → send nothing).
+
 Most "AI automation" projects either let the model do everything (including the
 part that must never be fuzzy) or keep the AI out entirely. This one draws a hard
 line through the middle:
@@ -18,13 +22,9 @@ line through the middle:
 | | Research leg | Delivery leg |
 |---|---|---|
 | Nature | open-ended search + judgment | deterministic execution |
-| Tool | AI agent under **5 hard anti-fabrication rules** | templates + a 106-line script |
+| Tool | AI agent under **five hard rules** | templates + a 159-line script |
 | Cost of failure | a wrong sentence (correctable, attributable) | wrong recipient / missed / duplicate send (not recallable) |
 | Design target | coverage + honesty | predictability + auditability |
-
-**Research may be fuzzy. Delivery must be exact.** Everything here follows from
-that one sentence — including the rule that *silence is a valid state*
-(no event tomorrow → send nothing).
 
 ## Quick start (no keys, no network)
 
@@ -60,6 +60,19 @@ Python 3.8+, **standard library only** — no pip install, nothing to build.
 **Deploying with an AI agent?** [`AGENTS.md`](AGENTS.md) is the machine-readable contract:
 the two commands that prove the repo is healthy (with expected byte counts), the five
 questions an agent must ask before touching anything, and a failure-mode table.
+
+**Two ways in.**
+
+**Path A — you just want to use it.** Change nothing. Read `docs/` in order:
+[01 architecture](docs/01-architecture.md) → [02 design system](docs/02-design-system.md) →
+[03 AI research discipline](docs/03-ai-research-discipline.md) →
+[04 delivery and deployment](docs/04-delivery-and-deployment.md). Then put your own hours in
+your scheduler; for real sending, follow the block above.
+
+**Path B — you want to change it.** Plain Python, standard library only: no build step,
+nothing to install. Edit a template or a script and re-run the first command above — note that
+the rendered cards in `demo/output/` are git-visible results, so they show up in your diff.
+If you are an AI agent working here, read [`AGENTS.md`](AGENTS.md) first; it is the contract.
 
 ## Make it yours — timezone, colours, schedule
 
@@ -113,8 +126,8 @@ Its rules are structural, not vibes:
 
 1. **Actual ≠ consensus.** Filling the consensus number into the "actual" slot is
    the single worst failure mode; if the release is late, the card says so.
-2. **Unknown has a representation.** Missing data is written as `not retrieved` —
-   never estimated, never left blank.
+2. **Unknown has a representation.** Missing data is written as `未获取`
+   (the Chinese for "not retrieved") — never estimated, never left blank.
 3. **No unfalsifiable language.** No `≈`, no "roughly", no stand-alone
    "weakening" — give the number, the level, or the delta.
 4. **Every number carries its source** (Fed / BLS / BEA / CME FedWatch / Reuters / Bloomberg).
@@ -164,7 +177,7 @@ Before claiming anything for ourselves, here is what already exists — and note
 |---|---|---|
 | FedWatch probabilities | [`pyfedwatch`](https://github.com/ARahimiQuant/pyfedwatch) — 55★, Apache-2.0, Python implementation of the CME FedWatch tool | our data leg is an AI agent reading public sources ([docs/03](docs/03-ai-research-discipline.md)) — a deliberate trade-off, not an oversight |
 | Economic-calendar parsing | [`forex_factory_calendar_news_scraper`](https://github.com/fizahkhalid/forex_factory_calendar_news_scraper) — 103★, MIT | we keep a hand-curated `data/calendar.json` (only the events that move markets, with Beijing-time labels); take the scraper if you want full coverage |
-| Multi-channel push | [`push-all-in-one`](https://github.com/CaoMeiYouRen/push-all-in-one) — 211★, MIT (Server酱 / DingTalk / Bark / email …) | we call SMTP and PushPlus directly, in 106 lines of `scripts/send.py`; take the SDK if you need more channels |
+| Multi-channel push | [`push-all-in-one`](https://github.com/CaoMeiYouRen/push-all-in-one) — 211★, MIT (Server酱 / DingTalk / Bark / email …) | we call SMTP and PushPlus directly, in 159 lines of `scripts/send.py`; take the SDK if you need more channels |
 | Workflow automation | n8n templates, e.g. [`awesome-n8n-templates`](https://github.com/enescingoz/awesome-n8n-templates) — 25k★ | we schedule with the host platform; take n8n if you want a visual editor |
 
 **Zero third-party dependencies.** `demo/render_card.py` and `scripts/send.py` import only the
@@ -178,8 +191,8 @@ versus **four scheduled products with subscriber fan-out, delivery guarantees an
 
 So what *is* rare here?
 
-1. **An AI research leg with a written anti-fabrication ruleset** — "unknown" is a first-class value
-   (`not retrieved`), actual is never confused with consensus, every number carries a source ([docs/03](docs/03-ai-research-discipline.md)).
+1. **An AI research leg with five written hard rules** — "unknown" is a first-class value
+   (`未获取`), actual is never confused with consensus, every number carries a source ([docs/03](docs/03-ai-research-discipline.md)).
 2. **The architectural split** between fuzzy research and exact delivery: *research may be fuzzy,
    delivery must be exact* ([docs/01](docs/01-architecture.md)). In the generic AI-automation space
    this boundary is usually absent — the agent decides everything.
@@ -190,6 +203,11 @@ So what *is* rare here?
 
 If you need a library — probabilities, parsing, pushing — take the projects above; they are better at
 it than this repo is. What you can borrow *here* is the shape of the system.
+
+**A useful criterion for whether this repo is for you:** do you need the *shape* of a system — a fuzzy
+research half fenced by written rules, plus an exact, auditable delivery half — or do you need a library
+that computes FedWatch probabilities, parses economic calendars and fans out messages? If it is the
+second one, use the projects above and skip this one.
 
 ## Docs
 

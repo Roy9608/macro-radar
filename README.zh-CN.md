@@ -1,6 +1,6 @@
 # macro-radar
 
-简体中文 | [English](README.md)
+[English](README.md) · **简体中文**
 
 **AI 研究员 + 确定性分发：一个真实在跑的美联储宏观事件哨兵。**
 跟踪 FOMC / CPI / NFP / PCE，把研究结论渲染成卡片推送给订阅者——邮件为主，
@@ -11,18 +11,18 @@
 
 ## 这个仓库值得看一眼的地方
 
+**先说结论：研究可以模糊，分发必须精确。** 整套设计都是这一句话的推论——
+包括"**静默是合法状态**"（明天没事件就不发）。
+
 大多数"AI 自动化"项目要么让模型包办一切（包括那些绝不能含糊的部分），
 要么干脆不用 AI。这个项目在中间画了一条硬线：
 
 | | 研究半场 | 分发半场 |
 |---|---|---|
 | 本质 | 开放式检索 + 判断 | 确定性执行 |
-| 工具 | AI Agent（受**5 条反编造硬规则**约束） | 模板 + 106 行脚本 |
+| 工具 | AI Agent（受**五条硬规则**约束） | 模板 + 159 行脚本 |
 | 失效代价 | 一句话写错（可修正、可溯源） | 发错人 / 漏发 / 重复发（不可撤回） |
 | 设计目标 | 覆盖 + 诚实 | 可预测 + 可复核 |
-
-**研究可以模糊，分发必须精确。** 整套设计都是这一句话的推论——
-包括"**静默是合法状态**"（明天没事件就不发）。
 
 ## 快速开始（无需密钥、无需联网）
 
@@ -55,6 +55,18 @@ Python 3.8+，**纯标准库**——不装依赖、没有构建步骤（可选�
 
 **用 AI Agent 部署？** [`AGENTS.md`](AGENTS.md) 是机器可读的契约：两条证明仓库健康的命令
 （含预期字节数）、动手前必须问清的五个问题、以及失败模式对照表。
+
+**两条路。**
+
+**路线 A —— 只想用它。** 一个字都不改。按顺序读 `docs/`：
+[01 架构](docs/01-architecture.md) → [02 设计系统](docs/02-design-system.md) →
+[03 AI 研究纪律](docs/03-ai-research-discipline.md) →
+[04 分发与部署](docs/04-delivery-and-deployment.md)。然后把你自己的时刻填进调度器；
+要真正发送，就照上面的命令块操作。
+
+**路线 B —— 想改它。** 纯 Python，只用标准库：没有构建步骤，不用装任何东西。
+改模板或改脚本，重跑上面第一条命令即可——注意 `demo/output/` 里的卡片是纳入版本管理的产物，
+你的改动会出现在 diff 里。如果你是 AI Agent，请先读 [`AGENTS.md`](AGENTS.md)，那是契约。
 
 ## 改成你自己的 —— 时区 / 配色 / 作息
 
@@ -151,7 +163,7 @@ FedWatch 概率条三色渐变、以及**红涨绿跌**（中国习惯）统一�
 |---|---|---|
 | FedWatch 概率 | [`pyfedwatch`](https://github.com/ARahimiQuant/pyfedwatch) —— 55★，Apache-2.0，CME FedWatch 工具的 Python 实现 | 数据腿是 AI Agent 读公开信息（[docs/03](docs/03-ai-research-discipline.md)）——这是**刻意的取舍**，不是没查到 |
 | 经济日历解析 | [`forex_factory_calendar_news_scraper`](https://github.com/fizahkhalid/forex_factory_calendar_news_scraper) —— 103★，MIT | 我们手工维护 `data/calendar.json`（只留有市场影响力的事件，标注北京时间）；要全量覆盖就用那个爬虫 |
-| 多通道推送 | [`push-all-in-one`](https://github.com/CaoMeiYouRen/push-all-in-one) —— 211★，MIT（Server酱 / 钉钉 / Bark / 邮件…） | 我们用 `scripts/send.py` 的 106 行直接调 SMTP 与 PushPlus；要更多通道就用那个 SDK |
+| 多通道推送 | [`push-all-in-one`](https://github.com/CaoMeiYouRen/push-all-in-one) —— 211★，MIT（Server酱 / 钉钉 / Bark / 邮件…） | 我们用 `scripts/send.py` 的 159 行直接调 SMTP 与 PushPlus；要更多通道就用那个 SDK |
 | 工作流自动化 | n8n 模板，如 [`awesome-n8n-templates`](https://github.com/enescingoz/awesome-n8n-templates) —— 25k★ | 我们用宿主平台调度；要可视化编排就用 n8n |
 
 **零第三方依赖。** `demo/render_card.py` 与 `scripts/send.py` 只 import 标准库
@@ -164,7 +176,7 @@ FedWatch 概率条三色渐变、以及**红涨绿跌**（中国习惯）统一�
 
 那么这个仓库里**真正稀有**的是什么？
 
-1. **带成文反编造规则的 AI 研究腿**——"未知"是一等公民（`未获取`）、实际值绝不与预期值混淆、
+1. **带五条成文硬规则的 AI 研究腿**——"未知"是一等公民（`未获取`）、实际值绝不与预期值混淆、
    每个数值都带来源（[docs/03](docs/03-ai-research-discipline.md)）。
 2. **"研究可模糊、分发必须确定"的架构切分**（[docs/01](docs/01-architecture.md)）。
    在泛 AI 自动化领域，这条边界通常是缺失的——让 agent 决定一切。
@@ -173,6 +185,10 @@ FedWatch 概率条三色渐变、以及**红涨绿跌**（中国习惯）统一�
 
 如果你要的是一个库（概率、解析、推送），请用上面那些项目——它们比本仓库做得更好。
 你**能从这里拿走**的，是系统的形状。
+
+**判断"这仓库是否适合你"的一个实用标准：** 你要的是这套系统的**形状**——一个被成文规则约束住的
+模糊研究半场，加一个精确、可复核的分发半场——还是要一个能算 FedWatch 概率、解析经济日历、
+做多通道推送的库？如果是后者，请用上面那些项目，跳过这一个。
 
 ## 文档
 
